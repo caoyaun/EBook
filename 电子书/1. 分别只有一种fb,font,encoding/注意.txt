@@ -1,0 +1,2 @@
+Ö´ĞĞÃüÁî£º
+./mnt/nfs/show_book -s 32 -f /mnt/disk/simfang.ttf -h /mnt/disk/HZK16 -d fb /mnt/disk/utf-8.txt

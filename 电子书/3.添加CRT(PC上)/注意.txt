@@ -1,0 +1,20 @@
+在64位机上做实验各种编译错误，干脆在32位机上做了(版本Ubuntu9.10)
+
+步骤：
+编译安装svga库:
+1. tar -vxf svgalib_1.4.3.orig.tar.gz
+2. tar -vxf svgalib_1.4.3-30.debian.tar.gz
+3. cd svgalib-1.4.3.orig/
+4. for file in ../debian/patches/*.patch; do patch -p1 < $file; done
+5. make install					//错误，要先安装libx86
+
+编译安装libx86:
+1. tar -vxf libx86_1.1+ds1.orig.tar.gz
+2. gunzip libx86_1.1+ds1-6.diff.gz
+3. cd libx86-1.1/
+4. patch -p1 < ../libx86_1.1+ds1-6.diff
+5. make							//出错，要加宏定义，参考561491.patch
+6. make install
+
+运行命令：
+.show_book -s 32 -f simfang.ttf -h HZK16 -d crt utf-8.txt
