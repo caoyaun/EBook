@@ -8,7 +8,7 @@
 #include <sys/ioctl.h>
 #include <debug_manager.h>
 #include <linux/fb.h>
-
+ 
 #include <config.h>
 
 #include <disp_manager.h>
